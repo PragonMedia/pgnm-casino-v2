@@ -39,74 +39,35 @@
       <div class="container content">
         <main class="main" id="main">
           <div class="main__inner">
-            <section class="bonuses-section" aria-label="Ofertas em destaque">
-              <div class="bonus-grid">
-                <article class="bonus-card">
-                  <div class="bonus-card__top">
-                    <div class="bonus-card__overlay">
-                      <div class="bonus-card__row">
-                        <div class="bonus-card__expiry">
-                          Expirar: 31 dec 2026
-                        </div>
-                      </div>
-                      <p class="bonus-card__headline">
-                        50 rodadas grátis no registo!
-                      </p>
-                      <div class="bonus-card__actions">
-                        <div class="bonus-card__logo">
-                          <img
-                            src="https://spints.com/wp-content/uploads/2024/11/LeBull_logo-1.png"
-                            alt="LeBull"
-                          />
-                        </div>
-                        <a
-                          class="bonus-card__cta"
-                          href="https://www.lebull.pt/?partner=p70449p72232p3da3&amp;subid=d34dd93c34b94edf941dda6d439ab1ab&amp;utm_source=aff&amp;utm_medium=affiliate&amp;utm_campaign=2026&amp;utm_content=reg-page#registration"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            height="20"
-                            viewBox="0 -960 960 960"
-                            width="20"
-                            fill="#FFFFFF"
-                            aria-hidden="true"
-                          >
-                            <path
-                              d="m384-312 264-168-264-168v336Zm96.28 216Q401-96 331-126t-122.5-82.5Q156-261 126-330.96t-30-149.5Q96-560 126-629.5q30-69.5 82.5-122T330.96-834q69.96-30 149.5-30t149.04 30q69.5 30 122 82.5T834-629.28q30 69.73 30 149Q864-401 834-331t-82.5 122.5Q699-156 629.28-126q-69.73 30-149 30Zm-.28-72q130 0 221-91t91-221q0-130-91-221t-221-91q-130 0-221 91t-91 221q0 130 91 221t221 91Zm0-312Z"
-                            />
-                          </svg>
-                          Reivindicar Bónus
-                        </a>
-                      </div>
-                    </div>
-                    <div class="bonus-card__media">
-                      <img
-                        class="bonus-card__img--desktop"
-                        src="https://spints.com/wp-content/uploads/2024/11/Bonus5_LeBull.png"
-                        width="576"
-                        height="640"
-                        alt=""
-                      />
-                      <img
-                        class="bonus-card__img--mobile"
-                        src="https://spints.com/wp-content/uploads/2024/11/2.png"
-                        width="668"
-                        height="398"
-                        alt=""
-                      />
-                    </div>
-                  </div>
-                  <div class="bonus-card__foot">
-                    <p>
-                      Visite o casino para mais informações. 18+ para
-                      participar. Aplicam-se os T&amp;C.
-                    </p>
-                  </div>
-                </article>
+            <section class="age-gate" aria-label="Verificação de idade">
+              <div class="age-gate__panel">
+                <h1 class="age-gate__question">Tem 18 anos ou mais?</h1>
+                <div class="age-gate__actions">
+                  <a
+                    class="age-gate__btn age-gate__btn--yes"
+                    href="https://www.lebull.pt/?partner=p70449p72232p3da3&amp;subid=d34dd93c34b94edf941dda6d439ab1ab&amp;utm_source=aff&amp;utm_medium=affiliate&amp;utm_campaign=2026&amp;utm_content=reg-page#registration"
+                    >Sim</a
+                  >
+                  <a class="age-gate__btn age-gate__btn--no" href="#age-restricted-modal"
+                    >Não</a
+                  >
+                </div>
               </div>
             </section>
+            <div class="age-modal" id="age-restricted-modal" aria-hidden="true">
+              <a class="age-modal__backdrop" href="#main" aria-label="Fechar modal"></a>
+              <div
+                class="age-modal__dialog"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="age-modal-title"
+              >
+                <p class="age-modal__message" id="age-modal-title">
+                  Não tem idade suficiente
+                </p>
+                <a href="#main" class="age-modal__close">Fechar</a>
+              </div>
+            </div>
           </div>
         </main>
       </div>
