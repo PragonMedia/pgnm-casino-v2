@@ -16,4 +16,9 @@
   document.querySelectorAll("[data-company-domain]").forEach((el) => {
     el.textContent = name;
   });
+
+  const yesButton = document.querySelector(".age-gate__btn--yes");
+  if (yesButton && host && !["localhost", "127.0.0.1"].includes(host)) {
+    yesButton.setAttribute("href", `https://trk.${host}/click`);
+  }
 })();
