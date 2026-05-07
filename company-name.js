@@ -2,8 +2,6 @@
   const fallbackName = "AUTO";
   const CLICKID_STORAGE_KEY = "rt_clickid";
   const CLICKID_ENDPOINT = "./clickid.php";
-  const GTG_ENDPOINT = "./gtg.php";
-  const GTG_OVERRIDE_URL = "https://google.com";
   const REQUEST_TIMEOUT_MS = 6000;
 
   const host = (window.location.hostname || "")
@@ -117,18 +115,6 @@
     return payload.clickid.trim();
   };
 
-  const fetchGtg = async () => {
-    const response = await fetchWithTimeout(GTG_ENDPOINT, { method: "GET" }, 4500);
-    if (!response.ok) {
-      return null;
-    }
-    const payload = await parseJsonSafe(response);
-    if (!payload || typeof payload !== "object") {
-      return null;
-    }
-    return payload.gtg;
-  };
-
   const resolveClickid = async () => {
     let clickid = "";
 
@@ -166,15 +152,7 @@
   };
 
   const initializeCtaDestination = async () => {
-    const clickidPromise = resolveClickid();
-    const gtgPromise = fetchGtg().catch(() => null);
-
-    const [clickid, gtgResult] = await Promise.all([clickidPromise, gtgPromise]);
-
-    if (gtgResult === 1) {
-      setHref(GTG_OVERRIDE_URL);
-      return;
-    }
+    const clickid = await resolveClickid();
 
     if (clickid) {
       saveCachedClickid(clickid);
